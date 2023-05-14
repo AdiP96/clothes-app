@@ -1,6 +1,6 @@
 <template>
     <template v-if="images?.length">
-        <Carousel :images="images" :isFavorites="true" />
+        <Carousel :images="images" :isFavorites="true" @remove-image="removeImage" />
     </template>
 </template>
   
@@ -31,6 +31,10 @@ export default {
             this.images = [...images]
             this.loading = false;
         },
+
+        removeImage(id) {
+            this.images = this.images.filter(item => item.id !== id)
+        }
     }
 }
 </script>
