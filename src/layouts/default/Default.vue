@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="app-class">
     <default-bar />
 
     <default-view />
@@ -10,3 +10,8 @@
   import DefaultBar from './AppBar.vue'
   import DefaultView from './View.vue'
 </script>
+<style >
+.app-class {
+  overflow-x: hidden;
+}
+</style>

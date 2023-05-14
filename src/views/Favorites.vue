@@ -1,5 +1,7 @@
 <template>
-    <Carousel :images="images" />
+    <template v-if="images?.length">
+        <Carousel :images="images" />
+    </template>
 </template>
   
 <script>
