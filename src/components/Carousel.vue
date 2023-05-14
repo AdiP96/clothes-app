@@ -98,8 +98,8 @@ export default {
 
 <style>
 .carousel-image {
-    max-height: 1000px !important;
-    max-width: 500px !important;
+    max-height: 1200px !important;
+    max-width: 600px !important;
     margin: auto;
     object-fit: contain !important;
 }
