@@ -31,11 +31,11 @@ const routes = [
     ],
   },
 
-  {
-    path: "/auth",
-    name: "Auth",
-    component: () => import("@/views/Auth.vue"),
-  },
+  // {
+  //   path: "/auth",
+  //   name: "Auth",
+  //   component: () => import("@/views/Auth.vue"),
+  // },
 ];
 
 const router = createRouter({
@@ -43,18 +43,18 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach(async (to, from, next) => {
-  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
-  const { data } = await supabase.auth.getSession();
-  const user = data?.session?.user;
-  if (requiresAuth && !user) {
-    // uncomment to go to auth when not logged in
-    next("/auth");
-  } else if (to.path === "/auth" && user) {
-    next("/");
-  } else {
-    next();
-  }
-});
+// router.beforeEach(async (to, from, next) => {
+//   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+//   const { data } = await supabase.auth.getSession();
+//   const user = data?.session?.user;
+//   if (requiresAuth && !user) {
+//     // uncomment to go to auth when not logged in
+//     next("/auth");
+//   } else if (to.path === "/auth" && user) {
+//     next("/");
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;

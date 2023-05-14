@@ -1,6 +1,6 @@
 <template>
-    <template v-if="images?.length" >
-        <Carousel :images="images" />
+    <template v-if="images?.length">
+        <Carousel :images="images" :isFavorites="false" />
     </template>
 </template>
   
@@ -17,17 +17,26 @@ export default {
     },
 
     created() {
-        this.loadImages();
+        this.load();
     },
 
     methods: {
-        async loadImages() {
-            const { data } = await supabase.from('images').select('*');
-            console.log(data)
-            this.images = [...data].map(item => {
-                return {src: item.src, alt: ''}
-            })
+        async load() {
+            const { data: images } = await supabase.from('images').select('*');
+            this.images = this.shuffle([...images])
             this.loading = false;
+        },
+
+        shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+            }
+
+            return array;
         }
     }
 }

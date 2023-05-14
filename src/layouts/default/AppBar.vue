@@ -14,9 +14,9 @@
       <v-icon>mdi-heart</v-icon>
     </v-btn>
 
-    <v-btn icon to="/account">
+    <!-- <v-btn icon to="/account">
       <v-icon>mdi-account-circle</v-icon>
-    </v-btn>
+    </v-btn> -->
   </v-app-bar>
 </template>
 
