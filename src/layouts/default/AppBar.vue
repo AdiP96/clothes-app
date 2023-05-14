@@ -6,20 +6,27 @@
     </v-app-bar-title>
     <v-spacer></v-spacer>
 
-    <v-btn icon to="/">
+    <v-btn icon @click="() => goTo('/')">
       <v-icon>mdi-shimmer</v-icon>
     </v-btn>
 
-    <v-btn icon to="/favorites" >
+    <v-btn icon @click="() => goTo('/favorites')">
       <v-icon>mdi-heart</v-icon>
     </v-btn>
 
-    <v-btn icon to="/account" >
+    <v-btn icon @click="() => goTo('/account')">
       <v-icon>mdi-account-circle</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
 
-<script setup>
-  //
+<script>
+//
+export default {
+  methods: {
+    goTo(name) {
+      this.$router.push(name)
+    }
+  }
+}
 </script>
