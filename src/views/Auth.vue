@@ -75,7 +75,6 @@ export default {
           throw new Error(error.message);
         }
         router.push('/')
-        console.log('Signed in as:', data);
       } catch (error) {
         console.log(error.message);
       }
@@ -89,7 +88,6 @@ export default {
         }
 
         const { data, error } = await supabase.auth.signUp({ email: email.value, password: password.value });
-        console.log(data)
         if (error) {
 
           throw new Error(error.message);
@@ -101,7 +99,6 @@ export default {
           email: email.value
         })
 
-        console.log('Signed up as:', user);
         router.push('explore')
       } catch (error) {
         console.log(error.message);
@@ -114,7 +111,6 @@ export default {
         if (error) {
           throw new Error(error.message);
         }
-        console.log('Signed in with Google as:', user);
       } catch (error) {
         console.log(error.message);
       }
