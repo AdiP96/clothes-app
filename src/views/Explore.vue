@@ -34,7 +34,7 @@ export default {
 
     computed: {
         showArrows() {
-            return `${window.innerWidth < 768 ? true : 'hover'}`
+            return `${window.innerWidth < 768 ? false : 'hover'}`
         }
     }
 }
