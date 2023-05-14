@@ -1,8 +1,8 @@
 <template>
-    <v-carousel :cycle="true" :interval="0" height="100vh" width="100vw" :show-arrows="this.isMobile ? false : 'hover'"
+    <v-carousel :cycle="false" :interval="5000" height="100%" width="100%" :show-arrows="this.isMobile ? false : 'hover'"
         hide-delimiters>
         <v-carousel-item v-for="(image, index) in images" :key="index">
-            <v-img :src="image.src" :alt="image.alt" height="100vh" width="100vw"></v-img>
+            <v-img cover :src="image.src" :alt="image.alt" height="100%" width="100%"></v-img>
         </v-carousel-item>
     </v-carousel>
 </template>
