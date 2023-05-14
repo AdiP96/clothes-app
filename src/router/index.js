@@ -14,6 +14,11 @@ const routes = [
         component: () => import("@/views/Explore.vue"),
       },
       {
+        path: "/explore",
+        name: "Explore",
+        component: () => import("@/views/Explore.vue"),
+      },
+      {
         path: "/favorites",
         name: "Favorites",
         component: () => import("@/views/Favorites.vue"),

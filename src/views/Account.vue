@@ -2,8 +2,8 @@
   <v-container fluid>
     <v-card v-if="!loading" :loading="loading">
       <v-row>
-        <v-col class="mt-6 mb-3 mr-5">
-          <v-row justify="end">
+        <v-col class="mt-6 mb-3 ml-5">
+          <v-row>
             <v-btn color="primary" :loading="loading" @click="signOut" variant="text">
               Sign out
             </v-btn>
