@@ -1,5 +1,6 @@
 <template>
-    <v-carousel :cycle="true" :interval="5000" height="100vh" width="100vw" :show-arrows="showArrows" hide-delimiters>
+    <v-carousel :cycle="true" :interval="0" height="100vh" width="100vw" :show-arrows="this.isMobile ? false : 'hover'"
+        hide-delimiters>
         <v-carousel-item v-for="(image, index) in images" :key="index">
             <v-img :src="image.src" :alt="image.alt" height="100vh" width="100vw"></v-img>
         </v-carousel-item>
@@ -33,8 +34,8 @@ export default {
     },
 
     computed: {
-        showArrows() {
-            return `${window.innerWidth < 768 ? false : 'hover'}`
+        isMobile() {
+            return window.innerWidth < 768
         }
     }
 }
